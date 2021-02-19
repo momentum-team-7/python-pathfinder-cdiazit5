@@ -4,7 +4,9 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+pipdeptree = "*"
 pillow = "*"
+requests = "*"
 
 [dev-packages]
 yapf = "*"
@@ -13,4 +15,4 @@ pytest = "*"
 mypy = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "*"

@@ -31,7 +31,17 @@ As you go through this assignment, use test-driven development as much as possib
 
 Read [the Mountain Paths PDF](MountainPaths.pdf) to get started.
 
-Read the data from `elevation_small.txt` into an appropriate data structure to get the elevation data. This file is made up of multiple lines. Each line has a list of numbers representing elevation in meters. The elevation is the maximum elevation for a 90m x 90m square.
+*** step # 1 Read the data from `elevation_small.txt` into an appropriate data structure to get the elevation data.
+  -read the file and store it as a list of lists. (check out readlines)
+    -print out results to see what you have and how it corres. to map
+  -how to match each elevation to its correspnding coordinate. maybe find its value
+  -Use the pillow library to make a black or white square same size as the list of lists
+    -figure out the max/min (white to black, etc) elevation and determine the % greyscale to meassure where you are 
+    -try to match one pixel, grayscale it accordingly
+  
+
+
+ This file is made up of multiple lines. Each line has a list of numbers representing elevation in meters. The elevation is the maximum elevation for a 90m x 90m square.
 
 The numbers in this file are lined up like x-y coordinates. If the file contains the following:
 
