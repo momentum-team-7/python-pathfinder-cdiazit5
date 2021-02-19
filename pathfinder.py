@@ -16,13 +16,13 @@ with open('elevation_small.txt', "r") as file:
 # small_mountain_ele()
 
 min_elevation = int(min(map(min, coordinates)))
-print(min_elevation)
+# print(min_elevation)
 
 max_elevation = int(max(map(max, coordinates)))
-print(max_elevation)
+# print(max_elevation)
 
 elevation_diff = int((max_elevation)-(min_elevation))
-print(elevation_diff)
+# print(elevation_diff)
 
 dimensions_small = len(coordinates), len(coordinates[0])
 print (dimensions_small)
@@ -33,18 +33,20 @@ def grayscale(elevation, min, max):
 # func to covert elevation to RBG value
 
 im = Image.new('RGB', (600,600))
+# test loop
+# for x in range(600):
+#         for y in range (300):
+#             im.putpixel((x,y), (210, 100, 170))
+for x in range(600):
+        for y in range (600):
+            im.putpixel((x,y), grayscale(coordinates[x][y], min_elevation, max_elevation))
 im.save('elevation_small.png')
 Image.open('elevation_small.png')
 print(im.getpixel((4,80)))
 
-for x in range(600):
-        for y in range (300):
-            im.putpixel((x,y), (210, 100, 170))
 
 
-# for x in range(600):
-#         for y in range (600):
-#             im.putpixel((x,y), grayscale(coordinates[x][y], min_elevation, max_elevation))
+
 
 
 
