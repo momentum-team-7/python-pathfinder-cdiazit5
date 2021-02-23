@@ -68,20 +68,34 @@ dimensions_small = len(small_coordinates), len(small_coordinates[0])
 # testing
 
 # convert coord into pixel tup?
-# path_list = [(0,1),(0,2),(0,4),(0,5),(0,6),(2,6),(3,6)]
+path_list = [(0,1),(0,2),(0,4),(0,5),(0,6),(0,6),(0,7), (0,8), (0,0), (1,0), (6,0)]
 # path_list = [(small_coordinates[0][1], small_coordinates[0][2], small_coordinates[0][3], small_coordinates[0][4]]
 
-def find_shortest_distance(elevation, top, middle, bottom):
-    top_distance = elevation - top
-    middle_distance = elevation - middle
-    bottom_distance = elevation - bottom
-    lowest_dist = min([top_distance, middle_distance, bottom_distance])
-    if lowest_dist == top_distance:
-        return top_distance
-    if lowest_dist == middle_distance:
-        return middle_distance
-    else: 
-        return bottom_distance
+# def find_shortest_distance(elevation, top, middle, bottom):
+#     top_distance = elevation - top
+#     middle_distance = elevation - middle
+#     bottom_distance = elevation - bottom
+#     lowest_dist = min([top_distance, middle_distance, bottom_distance])
+#     if lowest_dist == top_distance:
+#         return top_distance
+#     if lowest_dist == middle_distance:
+#         return middle_distance
+#     else: 
+#         return bottom_distance
+
+
+
+# append the lowest elevation value to the path list to draw?
+path_list = []
+def path_finder():
+    x = 0 
+    y = 1 
+    file_height = len(small_coordinates)
+    file_width = len(small_coordinates)
+    for coordinate in range (len(small_coordinates)):
+        current_pos = small_coordinates[x][y]
+        next_pos = []
+        
 
 
 
@@ -90,19 +104,20 @@ draw = ImageDraw.Draw(im)
 for x in range(600):
         for y in range (600):
             im.putpixel((x,y), grayscale(small_coordinates[y][x], min_elevation, max_elevation))
-# for x in range(0, 30):
-#     for y in range(0, 30):
-#         draw.line(path_list, (150,150,00))
+for x in range(0, 30):
+    for y in range(0, 30):
+        draw.line(path_list, (150,150,00))
 
 
         #     starting_point = small_coordinates[1][0]
 im.save('elevation_small.png')
 Image.open('elevation_small.png')
 print(im.getpixel((4,80)))
-print(im.getpixel(small_coordinates[0][1]))
+# print(im.getpixel(small_coordinates[0][1]))
 print(im.getpixel((0,0)))
-print(small_coordinates[0][1])
-
+print(small_coordinates[1][1])
+print(len(small_coordinates[0]))
+print(len(small_coordinates))
 
 
 # for coord in small_coordinates:
